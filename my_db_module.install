@@ -1,0 +1,53 @@
+<?php
+
+
+/**
+ * Implements hook_schema().
+ */
+ 
+//Creates the database tables required for the tracking system: uid, nid, stats, and progress
+ 
+function my_db_module_schema() {
+  $schema = array();
+  
+  $schema ['my_db'] = array(
+    'description' => 'The base table for my_db.',
+    'fields' => array(
+      'fe_id' => array(
+          'description' => 'The primary ID for each column',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      'nid' => array(
+        'description' => 'The node id of the video that is watched',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The id of the current logged in user',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 1,
+      ),
+      'stats' => array(
+        'description' => 'An array for storing the video statistics from the Vimeo api.',
+        'type' => 'varchar',
+        'length' => 20000,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'progress' => array(
+        'description' => 'The percentage of the video completed for this specific uid and nid',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('fe_id'),
+  );
+  return $schema;
+}
