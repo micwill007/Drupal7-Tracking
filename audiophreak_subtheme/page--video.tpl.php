@@ -83,7 +83,6 @@
           <div id="logo">
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
               <img src="<?php print $logo; ?>"/>
-              <p>I LOVE ANAL HAHAHA</p>
             </a>
           </div>
         <?php endif; ?>
