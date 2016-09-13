@@ -33,7 +33,7 @@ function my_db_module_block_view($delta = '') {
       // Create your block content here
       $block['subject'] = t('Title of first block (example_configurable_text)');
       //Have block pull NID, UID, PROGRESS from table and display whether this user has completed this video for this node
-       $block['content'] = 'fuck';
+       $block['content'] = 'hello';
               //Query the database progress field. if this nid is 100% complete, say so.
               // if ($progress == 5050) {
 //                 
